@@ -1,0 +1,28 @@
+﻿@model khoiuploader.Models.MemberModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>View</h2>
+
+@using (Html.BeginForm("Upload","Knt", FormMethod.Post, new { enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>MemberModel</h4>
+        <hr />
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="file" name="ImageFile" required />
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
